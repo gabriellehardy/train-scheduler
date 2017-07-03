@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+console.log("loaded");
 
   // Initialize Firebase
   var config = {
@@ -13,6 +14,8 @@ $(document).ready(function(){
   
 
   firebase.initializeApp(config);
+
+  console.log("firebase Initialized");
 
   var trainData = firebase.database();
 
