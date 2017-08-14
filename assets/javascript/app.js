@@ -19,10 +19,11 @@ console.log("loaded");
 
   var trainData = firebase.database();
 
-  $('#newTrainsubmit').on('click', function() {
+  $('#newTrainSubmit').on('click', function() {
 
+    console.log("clicked button");
     var tName = $('#tNameInput').val().trim();
-    var destination = $('desInput').val().trim();
+    var destination = $('#desInput').val().trim();
     var firstTrain = moment($('#firstTInput').val().trim(), "HH:mm").subtract(10, "years").format("X");
     var frequency = $('#frequencyInput').val().trim();
 
@@ -33,13 +34,15 @@ console.log("loaded");
       firstTrain: firstTrain,
       frequency: frequency
     };
-  
-    trainData.ref().push(newTrain);
 
-    console.log(newTrain.name);
-    console.log(newTrain.destination);
+    console.log(newT);
+  
+    trainData.ref().push(newT);
+
+    console.log(newT.name);
+    console.log(newT.destination);
     console.log(firstTrain);
-    console.log(newTrain.frequency)
+    console.log(newT.frequency)
 
     alert("Train successfully added");
 
